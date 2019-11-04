@@ -1,4 +1,4 @@
-var middleware = {
+const middleware = {
     logged_in: (req, res, next) => {
         const logged_in = true
         if (logged_in)
