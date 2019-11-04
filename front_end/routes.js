@@ -1,4 +1,5 @@
 const middleware = require('../middleware/middleware')
+const path = require('path')
 
 function routes(app) {
     app.get('/logout', middleware.logged_in, (req, res) => {
@@ -23,7 +24,7 @@ function routes(app) {
 
     app.get('/', (req, res) => {
         console.log("hit front page")
-        res.send("frontend page")
+        res.sendFile(path.join(__dirname, '../html/public/index.html'))
     })
 
     app.get('/*', (req, res) => {
